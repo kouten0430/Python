@@ -22,20 +22,6 @@ dummy.geometry(f"{dummy_width}x{dummy_height}+-999+-999")
 dummy.after(1, close_dummy)
 dummy.mainloop()
 
-# UWSCスクリプトを実行（.uwsファイルは関連付け済み）
-script_path = r"C:\Users\wrfmf\Documents\雑庫\uws\巻棒の位置を取得.uws"  # 実行したい UWSC スクリプトのパス（環境に応じて変更）
-try:
-    subprocess.run([script_path], check=True, timeout=30, shell=True)  # 30秒以内に完了を期待
-except subprocess.CalledProcessError:
-    messagebox.showerror(title="エラー", message="UWSCスクリプトの実行に失敗しました")
-    raise SystemExit
-except subprocess.TimeoutExpired:
-    messagebox.showerror(title="エラー", message="UWSCスクリプトがタイムアウトしました")
-    raise SystemExit
-except FileNotFoundError:
-    messagebox.showerror(title="エラー", message="UWSCスクリプトが見つかりません")
-    raise SystemExit
-
 # コンテキストメニューを開く
 pyautogui.hotkey('shift', 'f10')
 
