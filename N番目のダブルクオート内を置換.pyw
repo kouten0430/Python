@@ -15,7 +15,7 @@ def update_file():
         text = file.read()
     
     # 選択された値で置換
-    new_text = replace_nth_quote(text, selected_value.get(), 5)  # 例: 5番目を変更
+    new_text = replace_nth_quote(text, selected_value.get(), 6)  # 例: 6番目を変更
 
     # 上書き保存
     with open(file_path, "w", encoding="utf-8") as file:
@@ -44,6 +44,7 @@ root.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 # 選択肢（プルダウンメニューの値）
 options = [
     r"C:\Users\wrfmf\Pictures\boleromixIllustrious_v281",
+    r"C:\Users\wrfmf\Pictures\boleromixIllustrious_v301",
     r"C:\Users\wrfmf\Pictures\cocoIllustriousXL_v60",
     r"C:\Users\wrfmf\Pictures\NovelAI",
     r"C:\Users\wrfmf\Pictures\animagineXLV31_v31",
