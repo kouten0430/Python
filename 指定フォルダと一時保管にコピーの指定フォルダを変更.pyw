@@ -1,12 +1,14 @@
 import tkinter as tk
 from tkinter import ttk
 
+# n番目のダブルクオート内文字列を置換する関数
 def replace_nth_quote(text, new, n):
     parts = text.split('"')
     target_index = 2 * (n - 1) + 1
     parts[target_index] = new
     return '"'.join(parts)
 
+# ファイル読み込み → 置換する関数呼び出し → 上書き保存 → ウィンドウを閉じる関数
 def update_file():
     file_path = r"C:\Users\wrfmf\Documents\雑庫\uws\指定フォルダと一時保管にコピー.uws"
     
@@ -26,7 +28,7 @@ def update_file():
 
 # --- GUIの作成 ---
 root = tk.Tk()
-root.title("ダブルクオート内の置換")
+root.title("指定フォルダを変更")
 
 # ウィンドウのサイズ
 window_width = 400
@@ -63,7 +65,7 @@ dropdown = ttk.Combobox(root, textvariable=selected_value, values=options, state
 dropdown.pack(pady=10)
 
 # 実行ボタン
-btn_replace = tk.Button(root, text="置換する", command=update_file)
+btn_replace = tk.Button(root, text="変更する", command=update_file)
 btn_replace.pack(pady=10)
 
 # GUI開始
